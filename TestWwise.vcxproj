@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Emscripten|x64">
+      <Configuration>Emscripten</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{968577fd-4788-4feb-9f75-9d89259a89ca}</ProjectGuid>
+    <RootNamespace>TestWwise</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Emscripten|x64'">
+    <IncludePath>$(ProjectDir)wwise\include;D:\Program Files\EmscriptenSDK\emsdk-main\upstream\emscripten\system\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)wwise\lib;D:\Program Files\EmscriptenSDK\emsdk-main\upstream\emscripten\system\lib;$(LibraryPath)</LibraryPath>
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>$(ProjectDir)wwise\include;D:\Program Files\EmscriptenSDK\emsdk-main\upstream\emscripten\system\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(LibraryPath)</LibraryPath>
+    <ReferencePath>$(ReferencePath)</ReferencePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(ProjectDir)wwise\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Ak3DAudioBedMixerFX.lib;AkAudioInputSource.lib;AkCompressorFX.lib;AkDelayFX.lib;AkExpanderFX.lib;AkFlangerFX.lib;AkGainFX.lib;AkGuitarDistortionFX.lib;AkHarmonizerFX.lib;AkMatrixReverbFX.lib;AkMeterFX.lib;AkParametricEQFX.lib;AkPeakLimiterFX.lib;AkPitchShifterFX.lib;AkRecorderFX.lib;AkRoomVerbFX.lib;AkSilenceSource.lib;AkSineSource.lib;AkStereoDelayFX.lib;AkSynthOneSource.lib;AkTimeStretchFX.lib;AkToneSource.lib;AkTremoloFX.lib;AkMemoryMgr.lib;AkMusicEngine.lib;AkSoundEngine.lib;AkSpatialAudio.lib;AkStreamMgr.lib;AkVorbisDecoder.lib;AkOpusDecoder.lib;CommunicationCentral.lib;iZHybridReverbFX.lib;iZTrashBoxModelerFX.lib;iZTrashDelayFX.lib;iZTrashDistortionFX.lib;iZTrashDynamicsFX.lib;iZTrashFiltersFX.lib;iZTrashMultibandDistortionFX.lib;MasteringSuiteFX.lib;McDSPFutzBoxFX.lib;McDSPLimiterFX.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Emscripten|x64'">
+  <ClCompile>
+    <WarningLevel>Level3</WarningLevel>
+    <SDLCheck>true</SDLCheck>
+    <PreprocessorDefinitions>EMSCRIPTEN;EMSCRIPTEN_HAS_UNBOUND_TYPE_NAMES=0;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    <ConformanceMode>true</ConformanceMode>
+  </ClCompile>
+  <Link>
+    <SubSystem>Console</SubSystem>
+    <GenerateDebugInformation>true</GenerateDebugInformation>
+    <AdditionalLibraryDirectories>$(ProjectDir)wwise\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    <AdditionalDependencies>libAk3DAudioBedMixerFX.a;%(AdditionalDependencies)</AdditionalDependencies>
+    <AdditionalDependencies>libAkAudioInputSource.a;%(AdditionalDependencies)</AdditionalDependencies>
+    <AdditionalDependencies>libAkCompressorFX.a;%(AdditionalDependencies)</AdditionalDependencies>
+    <AdditionalDependencies>libAkDelayFX.a;%(AdditionalDependencies)</AdditionalDependencies>
+    <AdditionalDependencies>libAkExpanderFX.a;%(AdditionalDependencies)</AdditionalDependencies>
+    <AdditionalDependencies>libAkFlangerFX.a;%(AdditionalDependencies)</AdditionalDependencies>
+    <AdditionalDependencies>libAkGainFX.a;%(AdditionalDependencies)</AdditionalDependencies>
+    <AdditionalDependencies>libAkGuitarDistortionFX.a;%(AdditionalDependencies)</AdditionalDependencies>
+    <AdditionalDependencies>libAkHarmonizerFX.a;%(AdditionalDependencies)</AdditionalDependencies>
+    <AdditionalDependencies>libAkMatrixReverbFX.a;%(AdditionalDependencies)</AdditionalDependencies>
+    <AdditionalDependencies>libAkMemoryMgr.a;%(AdditionalDependencies)</AdditionalDependencies>
+    <AdditionalDependencies>libAkMeterFX.a;%(AdditionalDependencies)</AdditionalDependencies>
+    <AdditionalDependencies>libAkMusicEngine.a;%(AdditionalDependencies)</AdditionalDependencies>
+    <AdditionalDependencies>libAkOpusDecoder.a;%(AdditionalDependencies)</AdditionalDependencies>
+    <AdditionalDependencies>libAkParametricEQFX.a;%(AdditionalDependencies)</AdditionalDependencies>
+    <AdditionalDependencies>libAkPeakLimiterFX.a;%(AdditionalDependencies)</AdditionalDependencies>
+    <AdditionalDependencies>libAkPitchShifterFX.a;%(AdditionalDependencies)</AdditionalDependencies>
+    <AdditionalDependencies>libAkRecorderFX.a;%(AdditionalDependencies)</AdditionalDependencies>
+    <AdditionalDependencies>libAkReflectFX.a;%(AdditionalDependencies)</AdditionalDependencies>
+    <AdditionalDependencies>libAkRoomVerbFX.a;%(AdditionalDependencies)</AdditionalDependencies>
+    <AdditionalDependencies>libAkSilenceSource.a;%(AdditionalDependencies)</AdditionalDependencies>
+    <AdditionalDependencies>libAkSineSource.a;%(AdditionalDependencies)</AdditionalDependencies>
+    <AdditionalDependencies>libAkSoundEngine.a;%(AdditionalDependencies)</AdditionalDependencies>
+    <AdditionalDependencies>libAkSoundSeedWindSource.a;%(AdditionalDependencies)</AdditionalDependencies>
+    <AdditionalDependencies>libAkSoundSeedWooshSource.a;%(AdditionalDependencies)</AdditionalDependencies>
+    <AdditionalDependencies>libAkSpatialAudio.a;%(AdditionalDependencies)</AdditionalDependencies>
+    <AdditionalDependencies>libAkStereoDelayFX.a;%(AdditionalDependencies)</AdditionalDependencies>
+    <AdditionalDependencies>libAkStreamMgr.a;%(AdditionalDependencies)</AdditionalDependencies>
+    <AdditionalDependencies>libAkSynthOneSource.a;%(AdditionalDependencies)</AdditionalDependencies>
+    <AdditionalDependencies>libAkTimeStretchFX.a;%(AdditionalDependencies)</AdditionalDependencies>
+    <AdditionalDependencies>libAkToneSource.a;%(AdditionalDependencies)</AdditionalDependencies>
+    <AdditionalDependencies>libAkTremoloFX.a;%(AdditionalDependencies)</AdditionalDependencies>
+    <AdditionalDependencies>libAkVorbisDecoder.a;%(AdditionalDependencies)</AdditionalDependencies>
+    <AdditionalDependencies>libAuroHeadphoneFX.a;%(AdditionalDependencies)</AdditionalDependencies>
+    <AdditionalDependencies>libCommunicationCentral.a;%(AdditionalDependencies)</AdditionalDependencies>
+    <AdditionalDependencies>libiZHybridReverbFX.a;%(AdditionalDependencies)</AdditionalDependencies>
+    <AdditionalDependencies>libiZTrashBoxModelerFX.a;%(AdditionalDependencies)</AdditionalDependencies>
+    <AdditionalDependencies>libiZTrashDelayFX.a;%(AdditionalDependencies)</AdditionalDependencies>
+    <AdditionalDependencies>libiZTrashDistortionFX.a;%(AdditionalDependencies)</AdditionalDependencies>
+    <AdditionalDependencies>libiZTrashDynamicsFX.a;%(AdditionalDependencies)</AdditionalDependencies>
+    <AdditionalDependencies>libiZTrashFiltersFX.a;%(AdditionalDependencies)</AdditionalDependencies>
+    <AdditionalDependencies>libiZTrashMultibandDistortionFX.a;%(AdditionalDependencies)</AdditionalDependencies>
+    <AdditionalDependencies>libMasteringSuiteFX.a;%(AdditionalDependencies)</AdditionalDependencies>
+    <AdditionalDependencies>libMcDSPFutzBoxFX.a;%(AdditionalDependencies)</AdditionalDependencies>
+    <AdditionalDependencies>libMcDSPLimiterFX.a;%(AdditionalDependencies)</AdditionalDependencies>
+  </Link>
+</ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="AkDefaultIOHookDeferred.cpp" />
+    <ClCompile Include="AkDefaultLowLevelIODispatcher.cpp" />
+    <ClCompile Include="AkFileLocationBase.cpp" />
+    <ClCompile Include="AkFilePackage.cpp" />
+    <ClCompile Include="AkFilePackageLUT.cpp" />
+    <ClCompile Include="AkGeneratedSoundBanksResolver.cpp" />
+    <ClCompile Include="AkJobWorkerMgr.cpp" />
+    <ClCompile Include="AkMultipleFileLocation.cpp" />
+    <ClCompile Include="Application.cpp" />
+    <ClCompile Include="Intergration.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="TestWwise.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AkDefaultIOHookDeferred.h" />
+    <ClInclude Include="AkDefaultLowLevelIODispatcher.h" />
+    <ClInclude Include="AkFileHelpers.h" />
+    <ClInclude Include="AkFileHelpersBase.h" />
+    <ClInclude Include="AkFileLocationBase.h" />
+    <ClInclude Include="AkFilePackage.h" />
+    <ClInclude Include="AkFilePackageLowLevelIO.h" />
+    <ClInclude Include="AkFilePackageLowLevelIODeferred.h" />
+    <ClInclude Include="AkFilePackageLUT.h" />
+    <ClInclude Include="AkGeneratedSoundBanksResolver.h" />
+    <ClInclude Include="AkJobWorkerMgr.h" />
+    <ClInclude Include="AkMultipleFileLocation.h" />
+    <ClInclude Include="Application.h" />
+    <ClInclude Include="Intergration.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="Ultility.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AkFilePackageLowLevelIO.inl" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
